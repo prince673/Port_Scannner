@@ -1,6 +1,11 @@
 # Network Scanner and Directory Traversal Checker
 
 This project consists of a Python script that scans the network for active devices and checks for directory traversal vulnerabilities in a given URL.
+This README file provides a brief overview of the project, lists the requirements, setup instructions, and usage information. It also includes a section for contribution and license information.
+
+Make sure to replace the placeholders ('192.168.31.73', '192.168.152.134', and 'http://192.168.152.132/phpMyAdmin/') with the actual values you want to scan and test.
+
+Remember to install the required libraries mentioned in the setup section before running the code
 
 ## Requirements
 - Python 3.x
