@@ -1,61 +1,38 @@
-This Python-based cybersecurity utility is designed to perform three essential tasks: network scanning, port scanning, and basic vulnerability assessment for directory traversal. This tool is ideal for ethical hackers and cybersecurity enthusiasts looking to analyze and secure their networks.
+# Network Scanner and Directory Traversal Checker
 
-Features 📋
-Network Scanning
+This project consists of a Python script that scans the network for active devices and checks for directory traversal vulnerabilities in a given URL.
 
-Uses ARP requests to discover active devices within a specified IP range.
-Retrieves IP and MAC addresses of connected devices.
+## Requirements
+- Python 3.x
+- `scapy` library
+- `nmap` library
+- `requests` library
 
-Port Scanning
+## Setup
+1. Install the required libraries using the following command:
+2. Make sure you have the necessary permissions to perform network scans on the target network.
 
-Leverages the Nmap library to perform comprehensive scans on all 65,535 ports of a target.
-Displays open ports and associated services.
-Example Output:
-makefile
-Copy code
-Host: 192.168.1.1
-State: up
-Protocol: TCP
-Port: 22/ssh
-Port: 80/http
-Directory Traversal Vulnerability Check
+## Usage
+1. Open the `main.py` file and replace `'192.168.31.73'` with the actual IP range you want to scan.
+2. Replace `'192.168.152.134'` with the target IP address for the port scan.
+3. Replace `'http://192.168.152.132/phpMyAdmin/'` with the base URL you want to test for directory traversal vulnerabilities.
+4. Run the `main.py` file to perform the network scan and check for directory traversal vulnerabilities.
 
-Tests web servers for directory traversal vulnerabilities by attempting to access sensitive files like /etc/passwd.
-Example Output:
-php
-Copy code
-Directory traversal vulnerability found at http://example.com/../../etc/passwd
-No directory traversal vulnerability was found at http://example.com/
-Getting Started 🚀
-Prerequisites
-Python 3.x
-Required Python Libraries:
-Install them using the following command:
-bash
-Copy code
-pip install scapy python-nmap requests
-Usage
-Network Scanning
-Scan a specified IP range to discover active devices.
+project_directory/
+    README.md
+    LICENSE
+    requirements.txt
+    main.py
+    tests/
+        test_network_scanner.py
+        test_directory_traversal.py
+    docs/
+        index.md
 
-Python
-Copy code
-clients = scan_network('192.168.1.0/24')
-for a client in clients:
-    print(f"IP: {client['ip']}, MAC: {client['mac']}")
-Port Scanning
-Could you perform a port scan on a specific target IP?
+        
+## Contribution
+Feel free to contribute to this project by creating pull requests or reporting issues.
 
-Python
-Copy code
-port_scan('192.168.1.1')
-Directory Traversal Test
-Check if a web server is vulnerable to directory traversal attacks.
+## License
+This project is licensed under the MIT License.
 
-python
-Copy code
-check_directory_traversal('http://example.com/')
-Use Cases 🎯
-Identify devices and their MAC addresses on a network.
-Assess open ports and running services for vulnerabilities.
-Test web servers for directory traversal exploits.
